@@ -1,10 +1,12 @@
+import Hero from "@/components/Hero"
+
 export default function Home() {
   return (
     <main className="bg-zinc-950">
 
       <title>croaker</title>
 
-      <h1 className="text-6xl font-bold font-mono text-center">Liam Hughes</h1>
+      <Hero />
       <br></br>
 
       <h2 className="text-4xl font-bold font-mono">About</h2>
@@ -21,20 +23,13 @@ export default function Home() {
         </p>
 
         <br></br>
-    
-        <h2 className="text-4xl font-bold font-mono">Projects</h2>
 
+        <h2 className="text-4xl font-bold font-mono">Projects</h2>
 
         <h2 className="text-4xl font-bold font-mono">Experience</h2>
 
-
         <h2 className="text-4xl font-bold font-mono">Blog</h2>
 
-
-
-    
-    
     </main>
   )
 }
-
