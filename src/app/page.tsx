@@ -1,35 +1,39 @@
-import Hero from "@/components/Hero"
+'use client';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+import Hero from '../components/Hero'
+import Navbar from '../components/Navbar'
+import About from '../components/About'
+import Projects from '../components/Projects'
+import Experience from '../components/Experience'
+import Blog from '../components/Blog'
+
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const dynamicBg = useTransform(scrollYProgress, [0, 0.5, 1], ['#061320', '#0a192f', '#02060d']);
   return (
-    <main className="bg-zinc-950">
 
-      <title>croaker</title>
+    <motion.main style={{ backgroundColor: dynamicBg }} className='text-white'>
+
+
+      <Navbar />
 
       <Hero />
-      <br></br>
+      
+  <div className='flex-col flex pb-32'> 
 
-      <h2 className="text-4xl font-bold font-mono">About</h2>
-      <br></br>
+      <About />
+      
+      <Projects />
 
-      <h3>Hey, I'm Liam.</h3>
-      <p className="font-mono">I'm a Software Engineer, currently in my first year, studying BSc Computer Science at the University of Kent. <br></br> 
-        Alongside my studies, I am working on <b><i>NSMB+</i></b> a rework of the flagship nDS game; "New. Super Mario Bros. DS"<br></br>
-        To supplement this mod project, I created a .nds audio extractor/convertor: <b><i>nDS Audio Toolkit</i></b> — learn more <a href="https://github.com/Liam-GH/nDSAudioToolkit"><i><b>here</b></i> </a> <br></br>
-        <br></br>
+      <Experience />
 
-        Currently, I work as an AI Data Trainer at Outlier AI, which ensures i'm kept up to speed with the booming AI industry.<br></br>
-        On top of my current job, I'll be attending BrightNetwork's IEUK2026, as a Technology & Engineering Intern. <br></br>
-        </p>
+      <Blog />
 
-        <br></br>
+  </div>
 
-        <h2 className="text-4xl font-bold font-mono">Projects</h2>
-
-        <h2 className="text-4xl font-bold font-mono">Experience</h2>
-
-        <h2 className="text-4xl font-bold font-mono">Blog</h2>
-
-    </main>
+    </motion.main>
   )
 }
+
