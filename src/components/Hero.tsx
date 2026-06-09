@@ -4,6 +4,7 @@ export default function Hero() {
 
       <h1 className='text-6xl font-bold font-mono text-center'>Liam Hughes</h1>
       <h2 className='text-4xl font-bold font-mono text-center'>Software Engineer</h2>
+      
     </section>
   )
 }
